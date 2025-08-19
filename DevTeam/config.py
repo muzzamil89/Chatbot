@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # API Keys
-#AIzaSyA1jUHs_C94OPg_JdUF6nolBM4QcLxKSKw
-GEMINI_API_KEY = "#AIzaSyA1jUHs_C94OPg_JdUF6nolBM4QcLxKSKw" #os.getenv("GEMINI_API_KEY")
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Scoring Threshold
 REVIEW_SCORE_THRESHOLD = 90
