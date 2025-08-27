@@ -1,0 +1,25 @@
+```text
+# South Indian Kitchen Assistant CLI App - Requirements
+
+## 1. Data Storage
+
+*   Store a core dataset of 100 South Indian dishes in a Python in-memory structure (dictionary or list of objects).
+*   Each dish entry must contain: `name`, `ingredients`, `instructions`.
+
+## 2. User Interface (CLI)
+
+*   **Input:**  Function to accept a comma-separated list of ingredients from the user.
+*   **Search & Presentation:** Function to search the in-memory dataset for matching dishes based on user-provided ingredients.  Present a numbered list of up to 10 matching dishes to the user. If no match is found in the in-memory dataset, use the Gemini API to retrieve additional options. Update the in-memory dataset with any new dishes retrieved from the API.
+*   **Selection:** Function to allow the user to select a dish from the presented list using its number.
+*   **Output:** Function to display the selected dish's `name`, `ingredients`, and `instructions`.
+
+## 3. AI Integration (Gemini API)
+
+*   Use the `os` module to access `GEMINI_API_KEY` from environment variables.
+*   Use the Gemini API only when the in-memory dataset lacks sufficient matches.  API calls should handle generating dishes based on ingredients and complex queries.
+*   Parse the API response to extract `name`, `ingredients`, and `instructions` for each dish.  Handle potential API errors gracefully.
+
+## 4.  Future Considerations
+
+*   The CLI version serves as the foundation for future mobile app development.  The core logic will be reused, with the CLI I/O replaced by a mobile UI.
+```

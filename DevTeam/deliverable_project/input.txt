@@ -1,1 +1,27 @@
-Write a Python function that takes a list of numbers and returns the sorted list in ascending order. Provide only the Python code.
+You can build a command-line app that acts as a kitchen assistant. The app will have two main modes: one for finding dishes from ingredients and another for providing ingredients and instructions for a selected dish. To achieve this, follow these steps:
+
+1. Data Storage
+Minimize AI calls by storing a core set of 100 South Indian dishes in a Python in-memory object, like a dictionary or a list of objects. This data structure will hold each dish's name, ingredients, and cooking instructions.
+
+2. User Interface
+Build a command-line interface (CLI) to handle user input. You'll need functions to:
+
+Accept ingredients: The user lists ingredients they have.
+
+Present options: The app will search its in-memory data for matching dishes and present the user with a configurable list of South Indian dishes.
+If the data is not in-memory use the AI to get the options. If a new list of dishes provided as output from AI
+then update them to the already available list.
+
+Select a dish: The user selects a dish from the list.
+
+Display details: The app will then show the ingredients and instructions for the selected dish.
+
+3. AI Integration
+API Key: Use Python's os module to access your GEMINI_API_KEY from your environment variables.
+
+AI Call: Only use the Gemini API for tasks that are not covered by your in-memory data, such as generating dishes outside your pre-stored list, or for more complex, dynamic queries.
+
+Response Handling: The API's response will need to be parsed to extract the dish name, ingredients, and cooking instructions to display to the user.
+
+4. Future Development
+The CLI version is a great starting point because you can develop the core logic and features without the complexity of a graphical user interface (UI). Once the core functions are stable, you can adapt the code to a mobile app by replacing the command-line input and output with UI pages.

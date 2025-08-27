@@ -1,0 +1,103 @@
+{
+  "name": "South Indian Kitchen Assistant",
+  "version": "1.0",
+  "description": "A CLI application for finding South Indian recipes based on available ingredients.  Designed for scalability and future mobile app development.",
+  "components": [
+    {
+      "name": "User Interface (CLI)",
+      "description": "Handles user input and output via the command line.",
+      "technology": "Python",
+      "responsibilities": [
+        "Collects comma-separated ingredient list from user.",
+        "Displays search results (up to 10 recipes).",
+        "Handles user recipe selection.",
+        "Displays selected recipe details."
+      ]
+    },
+    {
+      "name": "Recipe Data Manager",
+      "description": "Manages the in-memory recipe dataset and interacts with the Gemini API.",
+      "technology": "Python",
+      "responsibilities": [
+        "Loads initial recipe dataset.",
+        "Searches the in-memory dataset for matching recipes.",
+        "Calls Gemini API if necessary.",
+        "Parses Gemini API responses.",
+        "Updates the in-memory dataset with new recipes.",
+        "Handles API errors gracefully."
+      ]
+    },
+    {
+      "name": "Gemini API Client",
+      "description": "Handles communication with the Gemini API.",
+      "technology": "Python",
+      "responsibilities": [
+        "Makes API calls to Gemini.",
+        "Authenticates using API key from environment variables.",
+        "Handles API responses and errors."
+      ]
+    },
+    {
+      "name": "Recipe Data Model",
+      "description": "Represents a recipe as a data structure.",
+      "technology": "Python",
+      "responsibilities": [
+        "Stores recipe name, ingredients, and instructions."
+      ]
+    }
+  ],
+  "data_flow": [
+    {
+      "step": 1,
+      "description": "User enters ingredients via CLI.",
+      "from": "User",
+      "to": "User Interface (CLI)"
+    },
+    {
+      "step": 2,
+      "description": "User Interface (CLI) passes ingredients to Recipe Data Manager.",
+      "from": "User Interface (CLI)",
+      "to": "Recipe Data Manager"
+    },
+    {
+      "step": 3,
+      "description": "Recipe Data Manager searches in-memory dataset.",
+      "from": "Recipe Data Manager",
+      "to": "Recipe Data Model"
+    },
+    {
+      "step": 4,
+      "description": "If insufficient matches, Recipe Data Manager calls Gemini API Client.",
+      "from": "Recipe Data Manager",
+      "to": "Gemini API Client"
+    },
+    {
+      "step": 5,
+      "description": "Gemini API Client returns results to Recipe Data Manager.",
+      "from": "Gemini API Client",
+      "to": "Recipe Data Manager"
+    },
+    {
+      "step": 6,
+      "description": "Recipe Data Manager updates in-memory dataset and returns results to User Interface (CLI).",
+      "from": "Recipe Data Manager",
+      "to": "User Interface (CLI)"
+    },
+    {
+      "step": 7,
+      "description": "User Interface (CLI) displays results to user.",
+      "from": "User Interface (CLI)",
+      "to": "User"
+    }
+  ],
+  "technology_stack": [
+    "Python",
+    "Gemini API"
+  ],
+  "future_considerations": [
+    "Mobile app development (Android/iOS) using core logic.",
+    "Integration with other recipe APIs.",
+    "Advanced search and filtering capabilities.",
+    "User account management and personalized recommendations."
+  ]
+}

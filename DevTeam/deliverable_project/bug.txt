@@ -1,0 +1,7 @@
+```text
+BUG-001;Description:The application does not handle invalid input gracefully.;Steps to reproduce:Provide an input that is not an integer.;Severity:Medium;Status:NEW
+BUG-002;Description:The application crashes when processing extremely large files.;Steps to reproduce:Provide a file that exceeds 1GB in size.;Severity:High;Status:NEW
+BUG-003;Description:The application does not provide any feedback to the user during processing.;Steps to reproduce:Run the application with a large input file.;Severity:Low;Status:NEW
+APPROVAL_STATUS: FAILED
+
+```

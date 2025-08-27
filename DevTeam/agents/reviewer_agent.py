@@ -1,5 +1,5 @@
 from crewai import Agent
-from utils.llm_factory import create_gemini_llm
+from utils.llm_factory import create_llm
 
 reviewer_agent = Agent(
     role="Code Reviewer",
@@ -7,5 +7,5 @@ reviewer_agent = Agent(
     backstory="You are an experienced reviewer ensuring software quality.",
     allow_delegation=False,
     verbose=True,
-    llm=create_gemini_llm("ollama")
+    llm=create_llm()
 )

@@ -1,5 +1,5 @@
 from crewai import Agent
-from utils.llm_factory import create_gemini_llm
+from utils.llm_factory import create_llm
 
 manager_agent = Agent(
     role="Project Manager / Architect",
@@ -7,5 +7,5 @@ manager_agent = Agent(
     backstory="You are an expert software architect and systems designer.",
     allow_delegation=True,
     verbose=True,
-    llm=create_gemini_llm("ollama")
+    llm=create_llm()
 )

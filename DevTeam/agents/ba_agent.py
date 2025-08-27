@@ -1,5 +1,5 @@
 from crewai import Agent
-from utils.llm_factory import create_gemini_llm
+from utils.llm_factory import create_llm
 
 ba_agent = Agent(
     role="Business Analyst",
@@ -7,5 +7,5 @@ ba_agent = Agent(
     backstory="You are skilled at asking the right questions to clarify any ambiguities.",
     allow_delegation=False,
     verbose=True,
-    llm=create_gemini_llm("ollama")
+    llm=create_llm()
 )

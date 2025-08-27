@@ -1,1 +1,1 @@
-Open AI key needs to be generated and used in the code.
+Code updated to use local llm.
